@@ -1,123 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="Connor Vanderhook is a good developer." />
-    <meta name="author" content="Connor Vanderhook" />
-    <meta name="theme-color" content="#111" />
-    <meta
-      name="keywords"
-      content="Connor Vanderhook,software,engineer,developer,consultant,freelance,tech,startup"
-    />
-    <title>Connor Vanderhook</title>
-    <link rel="apple-touch-icon" href="favicon.ico" />
-    <style>
-      html {
-        margin: 2em;
-      }
-      body {
-        background-color: #111;
-        color: #eee;
-        font-family: -apple-system, BlinkMacSystemFont, Menlo, Lato, Tahoma,
-          Arial, sans-serif;
-        font-size: 15px;
-        line-height: 1.5;
-      }
+<head>
+  <title>CSS Template</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-      h1 {
-        font-family: -apple-system, BlinkMacSystemFont, Menlo, Lato, Tahoma,
-          Arial, sans-serif;
-        font-size: 2em;
-        color: #fff;
-      }
+    body {
+      background-color: #121212;
+      color: #eee;
+      font-family: -apple-system, BlinkMacSystemFont, Menlo, Lato, Tahoma,
+      Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.5;
+    }
 
-      h2 {
-        font-family: -apple-system, BlinkMacSystemFont, Menlo, Lato, Tahoma,
-          Arial, sans-serif;
-        font-size: 1em;
-        color: #fff;
-      }
+    .header {
+      padding: 30px 30px 20px 30px;
+    }
 
-      h2 {
-        margin-top: 3em;
-      }
-      h1 {
-        margin-top: 0;
-      }
+    .header h2 {
+      font-size: 35px;
+    }
 
-      ul {
-        padding: 0;
-      }
+    .row {
+      padding: 0 30px 30px 30px;
+      display: -webkit-flex;
+      display: flex;
+    }
 
-      a {
-        text-decoration: none;
-        color: #eee;
-        box-shadow: inset 0 -1px 0 crimson;
-      }
+    .column {
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      padding: 10px 10px 10px 0;
+    }
 
-      a:hover {
-        color: crimson;
-      }
+    ul {
+      padding: 0;
+      list-style-type: none;
+    }
 
-      section {
-        max-width: 40em;
-      }
+    ul li {
+      display: flex;
+      margin-bottom: 2px;
+    }
+    ul li span {
+      display: block;
+      width: 20em;
+    }
+    ul li span:first-child {
+      width: 6em;
+    }
 
-      @media (min-width: 450px) {
-        ul li {
-          display: flex;
-        }
-        ul li span {
-          display: block;
-          width: calc(120% - 4em);
-        }
-        ul li span:first-child {
-          width: 6em;
-        }
-      }
+    a {
+      text-decoration: none;
+      color: #eee;
+      box-shadow: inset 0 -1px 0 #03DAC5;
+    }
 
-      @media (min-width: 800px) {
-        body {
-          margin: 2em;
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          grid-gap: 4em;
-          max-width: 60em;
-        }
-        section > h2:first-child {
-          margin-top: 0;
-        }
+    a:hover {
+      color: #03DAC5;
+    }
+
+    .footer {
+      padding: 10px;
+      text-align: center;
+    }
+
+    @media (min-width: 450px) {
+      ul li span:first-child {
+        width: 5em;
       }
-      @media (min-width: 1000px) {
-        body {
-          margin: 3em;
-          grid-gap: 6em;
-        }
+    }
+
+    @media (min-width: 999px) {
+      .column:nth-child(2) ul li span:first-child {
+        width: 4em;
       }
-      img {
-        width: 100%;
-        max-width: 10em;
-        border-radius: 100%;
-        margin-bottom: 2rem;
-        margin-left: -0.3em;
+    }
+
+    @media (max-width: 1000px) {
+      .row {
+        -webkit-flex-direction: column;
+        flex-direction: column;
       }
-    </style>
-  </head>
-  <body>
-    <section>
-      <img src="resources/crv.jpg" alt="My Face." />
-      <h1>Connor Vanderhook</h1>
-      <p>American down under</p>
-      <p>Software developer</p>
-      <p>Nature lover</p>
-      <p>Thinker</p>
-      <h2>On The Line</h2>
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h2>Connor Vanderhook</h2>
+    <p>software developer</p>
+    <p>down under</p>
+    <p>nature</p>
+    <p>think</p>
+  </div>
+  <div class="row">
+    <div class="column">
+      <h3>On The Line</h3>
       <ul>
         <li>
           <span>Resume</span>
           <span>
-            <a href="resources/resume.pdf" target="_blank">Connor Vanderhook</a>
+            <a href="resources/resume.pdf" target="_blank">
+              Connor Vanderhook
+            </a>
           </span>
         </li>
         <li>
@@ -131,52 +122,49 @@
         <li>
           <span>LinkedIn</span>
           <span>
-            <a
-              href="https://www.linkedin.com/in/connorvhook/"
-              rel="noreferrer"
-              target="_blank"
+            <a href="https://www.linkedin.com/in/connorvhook/"
+               rel="noreferrer"
+               target="_blank"
             >
-              connorvhook
+            connorvhook
             </a>
           </span>
         </li>
         <li>
           <span>Github</span>
           <span>
-            <a
-              href="https://github.com/cnnrrss"
-              rel="noreferrer"
-              target="_blank"
+            <a href="https://github.com/cnnrrss"
+                rel="noreferrer"
+                target="_blank"
             >
               cnnrrss
             </a>
           </span>
         </li>
       </ul>
-    </section>
-    <section>
-      <h2>Work</h2>
+    </div>
+    <div class="column">
+      <h3>Work</h3>
       <ul>
         <li>
           <span>2019</span>
           <span>
-            Full Stack Developer
-            <a
-              href="https://www.kablamo.com.au"
-              rel="noreferrer"
-              target="_blank"
-              >Kablamo</a
-            >
-          </span>
+              Full Stack Developer
+              <a href="https://www.kablamo.com.au"
+                 rel="noreferrer"
+                 target="_blank"
+              >
+                Kablamo
+              </a>
+            </span>
         </li>
         <li>
           <span>2018</span>
-          <span>
-            Software Engineer
-            <a href="https://www.trueanthem.com" target="_blank">
-              Trueanthem
-            </a>
-          </span>
+          <span>Software Engineer
+                <a href="https://www.trueanthem.com" target="_blank">
+                  Trueanthem
+                </a>
+              </span>
         </li>
         <li>
           <span>2016</span>
@@ -184,45 +172,45 @@
         </li>
         <li>
           <span>2014</span>
-          <span>
-            Technical Consultant
-            <a href="https://www.ncino.com" rel="noreferrer" target="_blank">
-              nCino
-            </a>
-          </span>
+          <span>Technical Consultant
+                <a href="https://www.ncino.com" rel="noreferrer" target="_blank">
+                  nCino
+                </a>
+              </span>
         </li>
         <li><span>2013</span><span>IT developer and Sysadmin</span></li>
         <li><span>2010</span><span>Hustling Wordpress templates</span></li>
         <li><span>2006</span><span>Programming CNCs with GCode</span></li>
         <li><span>2004</span><span>Hacking Myspace layouts</span></li>
       </ul>
-      <h2>Mood</h2>
+    </div>
+    <div class="column">
+      <h3>Mood</h3>
       <ul>
         <li>
-          <span>Listening</span>
+          <span>Tunes</span>
           <span>
-            <a
-              href="https://open.spotify.com/track/07eu5rlVam21xHaM76FOQb?si=EcMdfuxMQHO3cY4mng6Fag"
-              target="_blank"
+            <a href="https://open.spotify.com/track/0bRXwKfigvpKZUurwqAlEh?si=DAFNp7ydTDCBwCssvintng"
+               target="_blank"
             >
-              The Mid City Arcade
+              Bill Withers (r.i.p)
+            </a>
+          </span>
+        </li>
+        <li>
+          <span></span>
+          <span>
+            <a href="https://open.spotify.com/track/3iE46a0IZtMLurorkKEDuq?si=br8d6aQDSGeqYwEwlCoATQ"
+               target="_blank"
+            >
+              Quantic
             </a>
           </span>
         </li>
       </ul>
-      <ul>
-        <li>
-          <span>Reading</span>
-          <span>
-            <a
-              href="https://www.goodreads.com/book/show/24113.G_del_Escher_Bach"
-              target="_blank"
-            >
-              Gödel, Escher, Bach
-            </a>
-          </span>
-        </li>
-      </ul>
-    </section>
-  </body>
+    </div>
+  </div>
+  <div class="footer">
+  </div>
+</body>
 </html>
