@@ -9,18 +9,52 @@
   <meta name="theme-color" content="#121212" />
   <meta name="keywords" content="Connor Vanderhook,software,engineer,developer,consultant,freelance,tech,startup"/>
   <link rel="apple-touch-icon" href="favicon.ico" />
+  <script language="javascript" type="text/javascript" src="public/js/p5.js"></script>
+  <script language="javascript" type="text/javascript" src="public/js/sketch.js"></script>
+
   <style>
     * {
       box-sizing: border-box;
     }
 
+     /* html, body {
+      margin: 0;
+      padding: 0;
+      width:  100%;
+      height: 100%;
+    } */
+
     body {
+      margin: 0;
+      display: flex;
+      /* This centers our sketch horizontally. */
+      justify-content: center;
+      /* This centers our sketch vertically. */
+      align-items: center;
+
       background-color: #121212;
       color: #eee;
       font-family: -apple-system, BlinkMacSystemFont, Menlo, Lato, Tahoma,
       Arial, sans-serif;
       font-size: 15px;
       line-height: 1.5;
+    }
+
+    #sketch {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    canvas {
+      position: relative;
+      z-index: -3 !important;
+    }
+
+    #sketch canvas, #overlay {
+      height: 100%;
+      width: 100%;
+      position: absolute;
     }
 
     .header {
@@ -97,125 +131,128 @@
   </style>
 </head>
 <body>
-  <div class="header">
-    <h2>Connor Vanderhook</h2>
-    <p>software developer</p>
-    <p>down under</p>
-    <p>nature</p>
-    <p>think</p>
-  </div>
-  <div class="row">
-    <div class="column">
-      <h3>On The Line</h3>
-      <ul>
-        <li>
-          <span>Resume</span>
-          <span>
-            <a href="resources/resume.pdf" target="_blank">
-              Connor Vanderhook
-            </a>
-          </span>
-        </li>
-        <li>
-          <span>Email</span>
-          <span>
-            <a href="mailto:connorvhook@gmail.com" target="_blank">
-              connorvhook@gmail.com
-            </a>
-          </span>
-        </li>
-        <li>
-          <span>LinkedIn</span>
-          <span>
-            <a href="https://www.linkedin.com/in/connorvhook/"
-               rel="noreferrer"
-               target="_blank"
-            >
-            connorvhook
-            </a>
-          </span>
-        </li>
-        <li>
-          <span>Github</span>
-          <span>
-            <a href="https://github.com/cnnrrss"
-                rel="noreferrer"
-                target="_blank"
-            >
-              cnnrrss
-            </a>
-          </span>
-        </li>
-      </ul>
+  <div id="sketch">
+    <div id="overlay">
+        <div class="header">
+          <h2>Connor Vanderhook</h2>
+          <p>software developer</p>
+          <p>down under</p>
+          <p>nature</p>
+          <p>think</p>
+        </div>
+        <div class="row">
+          <div class="column">
+            <h3>On The Line</h3>
+            <ul>
+              <li>
+                <span>Resume</span>
+                <span>
+                  <a href="resources/resume.pdf" target="_blank">
+                    Connor Vanderhook
+                  </a>
+                </span>
+              </li>
+              <li>
+                <span>Email</span>
+                <span>
+                  <a href="mailto:connorvhook@gmail.com" target="_blank">
+                    connorvhook@gmail.com
+                  </a>
+                </span>
+              </li>
+              <li>
+                <span>LinkedIn</span>
+                <span>
+                  <a href="https://www.linkedin.com/in/connorvhook/"
+                     rel="noreferrer"
+                     target="_blank"
+                  >
+                  connorvhook
+                  </a>
+                </span>
+              </li>
+              <li>
+                <span>Github</span>
+                <span>
+                  <a href="https://github.com/cnnrrss"
+                      rel="noreferrer"
+                      target="_blank"
+                  >
+                    cnnrrss
+                  </a>
+                </span>
+              </li>
+            </ul>
+          </div>
+          <div class="column">
+            <h3>Work</h3>
+            <ul>
+              <li>
+                <span>2019</span>
+                <span>
+                    Full Stack Developer
+                    <a href="https://www.kablamo.com.au"
+                       rel="noreferrer"
+                       target="_blank"
+                    >
+                      Kablamo
+                    </a>
+                  </span>
+              </li>
+              <li>
+                <span>2018</span>
+                <span>Software Engineer
+                      <a href="https://www.trueanthem.com" target="_blank">
+                        Trueanthem
+                      </a>
+                    </span>
+              </li>
+              <li>
+                <span>2016</span>
+                <span>Team Lead CS Engineer</span>
+              </li>
+              <li>
+                <span>2014</span>
+                <span>Technical Consultant
+                      <a href="https://www.ncino.com" rel="noreferrer" target="_blank">
+                        nCino
+                      </a>
+                    </span>
+              </li>
+              <li><span>2013</span><span>IT developer and Sysadmin</span></li>
+              <li><span>2010</span><span>Hustling Wordpress templates</span></li>
+              <li><span>2006</span><span>Programming CNCs with GCode</span></li>
+              <li><span>2004</span><span>Hacking Myspace layouts</span></li>
+            </ul>
+          </div>
+          <div class="column">
+            <h3>Mood</h3>
+            <ul>
+              <li>
+                <span>Tunes</span>
+                <span>
+                  <a href="https://open.spotify.com/track/0bRXwKfigvpKZUurwqAlEh?si=DAFNp7ydTDCBwCssvintng"
+                     target="_blank"
+                  >
+                    Bill Withers (r.i.p)
+                  </a>
+                </span>
+              </li>
+              <li>
+                <span></span>
+                <span>
+                  <a href="https://open.spotify.com/track/3iE46a0IZtMLurorkKEDuq?si=br8d6aQDSGeqYwEwlCoATQ"
+                     target="_blank"
+                  >
+                    Quantic
+                  </a>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer"></div>
     </div>
-    <div class="column">
-      <h3>Work</h3>
-      <ul>
-        <li>
-          <span>2019</span>
-          <span>
-              Full Stack Developer
-              <a href="https://www.kablamo.com.au"
-                 rel="noreferrer"
-                 target="_blank"
-              >
-                Kablamo
-              </a>
-            </span>
-        </li>
-        <li>
-          <span>2018</span>
-          <span>Software Engineer
-                <a href="https://www.trueanthem.com" target="_blank">
-                  Trueanthem
-                </a>
-              </span>
-        </li>
-        <li>
-          <span>2016</span>
-          <span>Team Lead CS Engineer</span>
-        </li>
-        <li>
-          <span>2014</span>
-          <span>Technical Consultant
-                <a href="https://www.ncino.com" rel="noreferrer" target="_blank">
-                  nCino
-                </a>
-              </span>
-        </li>
-        <li><span>2013</span><span>IT developer and Sysadmin</span></li>
-        <li><span>2010</span><span>Hustling Wordpress templates</span></li>
-        <li><span>2006</span><span>Programming CNCs with GCode</span></li>
-        <li><span>2004</span><span>Hacking Myspace layouts</span></li>
-      </ul>
-    </div>
-    <div class="column">
-      <h3>Mood</h3>
-      <ul>
-        <li>
-          <span>Tunes</span>
-          <span>
-            <a href="https://open.spotify.com/track/0bRXwKfigvpKZUurwqAlEh?si=DAFNp7ydTDCBwCssvintng"
-               target="_blank"
-            >
-              Bill Withers (r.i.p)
-            </a>
-          </span>
-        </li>
-        <li>
-          <span></span>
-          <span>
-            <a href="https://open.spotify.com/track/3iE46a0IZtMLurorkKEDuq?si=br8d6aQDSGeqYwEwlCoATQ"
-               target="_blank"
-            >
-              Quantic
-            </a>
-          </span>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer">
   </div>
 </body>
 </html>
