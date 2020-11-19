@@ -81,5 +81,4 @@ function windowResized() {
 window.onresize = function (event) {
   windowResized();
   draw();
-  console.log(`resized x: ${window.height}, y: ${window.width}`);
 };
